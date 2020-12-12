@@ -6,14 +6,14 @@ let userLastName = checkStr("Ваша фамилия?", "Вы не ввели и
 
 let userAge = checkAge("Ваш возраст?");
 
-let sex = confirm("Если Ваш пол мужской нажмите 'Ок', иначе нажмите 'Отмена'")? "мужской" : "женский";
+let sex = confirm("Если Ваш пол мужской нажмите 'Ок', иначе нажмите 'Отмена'");
 
 alert(
     `ваше ФИО: ${userLastName} ${userName} ${userMiddleName} 
 ваш возраст в годах: ${userAge}
 ваш возраст в днях: ${userAge * 365}
 через 5 лет вам будет: ${userAge + 5}
-ваш пол: ${sex}
+ваш пол: ${sex?'мужской':'женский'}
 вы на пенсии: ${checkPension(userAge, sex)}`
 );
 
@@ -36,11 +36,11 @@ function checkAge(question) {
 }
 
 function checkPension(userAge, sex) {
-    if(userAge >= 63 && sex === 'мужской'){
+    if(userAge >= 63 && sex === true){
         return 'да';
-    }else if (userAge < 63 && sex === 'мужской'){
+    }else if (userAge < 63 && sex === true){
         return 'нет';
-    }else if (userAge >= 58 && sex === 'женский'){
+    }else if (userAge >= 58 && sex === false){
         return 'да';
     }else {
         return 'нет';
