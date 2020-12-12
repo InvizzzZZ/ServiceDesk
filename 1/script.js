@@ -14,7 +14,7 @@ alert(
 ваш возраст в днях: ${userAge * 365}
 через 5 лет вам будет: ${userAge + 5}
 ваш пол: ${sex?'мужской':'женский'}
-вы на пенсии: ${checkPension(userAge, sex)}`
+вы на пенсии: ${checkPension(userAge, sex)?'да':'нет'}`
 );
 
 function checkStr(question, wrong) {
@@ -37,12 +37,8 @@ function checkAge(question) {
 
 function checkPension(userAge, sex) {
     if(userAge >= 63 && sex === true){
-        return 'да';
+        return true;
     }else if (userAge < 63 && sex === true){
-        return 'нет';
-    }else if (userAge >= 58 && sex === false){
-        return 'да';
-    }else {
-        return 'нет';
-    }
+        return false;
+    }else return userAge >= 58 && sex === false;
 }
