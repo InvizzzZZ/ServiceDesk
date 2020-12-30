@@ -8,13 +8,14 @@ alert(treeSum(arr));
 
 function treeSum(arrParam) {
     let sum =  0;
-    arrParam.forEach(function (item, i, arr) {
-        if (typeof item !== 'object') {
-            sum += item;
-        } else {
-            sum += treeSum(arr[i]);
+    arrParam.forEach(
+        function (item) {
+            if (typeof item !== 'object')
+                sum += item;
+            else
+                sum += treeSum(item);
         }
-    });
+    );
     return sum;
 }
 
