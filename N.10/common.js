@@ -25,8 +25,16 @@ function mood(colorsCount) {
             i++;
         }
     }
+    document.getElementById('Colors').innerText += ' ' + printHash(colorsHash);
 }
 
 function randomDiap(n, m) {
     return Math.floor(Math.random() * (m - n + 1)) + n;
+}
+
+function printHash(hash) {
+    let str = [];
+    for (let k in hash)
+        str.push(k);
+    return str.join(', ')
 }
