@@ -4,7 +4,7 @@ let userMiddleName = checkStr("Ваше отчество?", "Вы не ввел�
 
 let userLastName = checkStr("Ваша фамилия?", "Вы не ввели или ввели некорректную фамилию");
 
-let userAge = checkAge("Ваш возраст?");
+let userAge = checkAge("Ваш возраст?", "Вы не ввели или ввели некорректный возраст");
 
 let sex = confirm("Если Ваш пол мужской нажмите 'Ок', иначе нажмите 'Отмена'");
 
@@ -26,10 +26,10 @@ function checkStr(question, wrong) {
     return str;
 }
 
-function checkAge(question) {
-    let age = Number(prompt("Ваш возраст?"));
+function checkAge(question, wrong) {
+    let age = Number(prompt(question));
     while(isNaN(age) || Number(age) > 150 || Number(age) <= 0){
-        alert("Вы не ввели или ввели некорректый возраст");
+        alert(wrong);
         age = Number(prompt(question));
     }
     return age;
