@@ -1,0 +1,34 @@
+.label-style {
+    display: inline-block;
+    width: 150px;
+    margin-left: 10px;
+}
+
+.input-style, .select-style {
+    margin: 3px;
+}
+
+.textarea-style {
+    margin-left: 10px;
+    height: 100px;
+    width: 365px;
+}
+
+input[type='submit'] {
+    margin-left: 10px;
+}
+
+.form-style {
+    margin: 20px;
+    width: 400px;
+    border-color: black;
+    border-style: solid;
+}
+
+form[name='main1'] {
+    height: 310px;
+}
+
+form[name='main2'] {
+    height: 135px;
+}
