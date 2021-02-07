@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+
+/*.content{*/
+/*    width: 30%;*/
+/*}*/
+
+form > div:not(.description) {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+label{
+    display: inline-block;
+    flex-basis: 150px;
+}
+
+input[type="text"]{
+    flex-basis: 200px;
+}
+
+input[type="date"]::-webkit-clear-button{
+    display: none; /* Hide the play */
+    -webkit-appearance: none; /* turn off default browser styling */
+}
+
+button[type="submit"]{
+    margin: 5px 0px;
+}
+
+textarea{
+    display: inline-block;
+    resize: none;
+    width: 80%;
+}
