@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*циферблат*/
+.clockFace{
+    border-radius: 50%;
+    background-color: #cbc042;
+    position: relative;
+    text-align: center;
+}
+
+/*цифры часов*/
+.number{
+    border-radius: 50%;
+    background-color: #1ba169;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*спан со временем*/
+.time{
+    z-index: 1;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*кружок в центре часов*/
+.center{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000000;
+    position: absolute;
+    z-index: 3;
+}
+
+.arrow{
+    position: absolute;
+    z-index: 2;
+    transform-origin: left center;
+}

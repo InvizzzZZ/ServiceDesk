@@ -40,8 +40,14 @@ function squareRootsTests() {
 
 function ttt() {
     let a = Number(prompt('Введите a'));
+    if(!a && a !== 0) return alert('Вводите числа!')
+
     let b = Number(prompt('Введите b'));
+    if(!b && b !== 0) return alert('Вводите числа!')
+
     let c = Number(prompt('Введите c'));
+    if(!c && c !== 0) return alert('Вводите числа!')
+
     let roots = squareRoots(a, b, c);
 
     if (!roots.length)
