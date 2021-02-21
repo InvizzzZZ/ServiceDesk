@@ -92,14 +92,14 @@ function createClock() {
 //интервал для времени и стрелок
     let intervalTime = setInterval(() => {
         ms = setArrows();
-    }, 1000);
+    }, 1000 - ms);
 
 //конец
 
 // вычисление положения стрелок и их выставление
     function setArrows() {
         let currTime = new Date();
-        let curr_ms = currTime.getMilliseconds(); // милисекунды тек. даты
+        let curr_ms = currTime.getTime(); // милисекунды тек. даты
 
         document.getElementById('time').innerHTML = formatDateTime(currTime);
 
@@ -112,9 +112,9 @@ function createClock() {
         let degHour = (currTime.getHours() * 60 * 60 + currTime.getMinutes() * 60 + currTime.getSeconds()) * (360 * 2) / (24 * 60 * 60) - 90; // угол для часовой стрелки каждую секунду
         hourArrow.style.transform = "rotate(" + degHour + "deg)";
 
-        console.log(formatDateTime(currTime));
+        console.log(formatDateTime(new Date()));
 
-        return curr_ms;
+        return (new Date().getTime() -  curr_ms);
     }
 
 //позиционирование цифр на циферблате
