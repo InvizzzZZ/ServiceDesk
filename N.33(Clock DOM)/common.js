@@ -87,19 +87,19 @@ function createClock() {
     clockFace.appendChild(time);
 //конец
 
-    let ms = setArrows(); // выставляем стрелки и цифровые часы в начальное положение
+    setArrows(); // выставляем стрелки и цифровые часы в начальное положение
 
 //интервал для времени и стрелок
     let intervalTime = setInterval(() => {
-        ms = setArrows();
-    }, 1000 - ms);
+        setArrows();
+    }, 1000);
 
 //конец
 
 // вычисление положения стрелок и их выставление
     function setArrows() {
         let currTime = new Date();
-        let curr_ms = currTime.getTime(); // милисекунды тек. даты
+        //let curr_ms = currTime.getMilliseconds(); // милисекунды тек. даты
 
         document.getElementById('time').innerHTML = formatDateTime(currTime);
 
@@ -113,8 +113,6 @@ function createClock() {
         hourArrow.style.transform = "rotate(" + degHour + "deg)";
 
         console.log(formatDateTime(new Date()));
-
-        return (new Date().getTime() -  curr_ms);
     }
 
 //позиционирование цифр на циферблате
