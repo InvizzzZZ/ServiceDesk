@@ -130,12 +130,12 @@ function createClock() {
     svg.appendChild(time);
 //конец
 
-    let ms = setArrows(); // выставляем стрелки и цифровые часы в начальное положение
+    setArrows(); // выставляем стрелки и цифровые часы в начальное положение
 
 //интервал для времени и стрелок
     let intervalTime = setInterval(() => {
-        ms = setArrows();
-    }, 1010 - ms);
+        setArrows();
+    }, 1000);
 
 //конец
 
@@ -144,8 +144,6 @@ function createClock() {
 
     function setArrows() {
         let currTime = new Date();
-        let curr_ms = currTime.getMilliseconds(); // милисекунды тек. даты
-
         document.getElementById('time').textContent = formatDateTime(currTime);
 
         let degSec = currTime.getSeconds() * 360 / 60; // угол для секундной стрелки каждую секунду
@@ -160,7 +158,7 @@ function createClock() {
         // hourArrow.style.transform = "rotate(" + degHour + "deg)";
         hourArrow.setAttribute('transform', 'rotate(' + degHour + ' ' + hourArrow.getAttribute("x1") + ' ' + hourArrow.getAttribute("y1") + ')');
 
-        return curr_ms;
+        console.log(new Date());
     }
 
 //позиционирование цифр на циферблате
