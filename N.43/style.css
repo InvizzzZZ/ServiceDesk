@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.table, .scoreTable{
+    margin: 10px auto;
+    position: relative;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.scoreTable > button{
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 36.5%;
+}
+
+.racket{
+    position: absolute;
+    border-radius: 4px;
+}
+
+.racketLeft{
+    background-color: #1b8726;
+    left: 0;
+
+}
+
+.racketRight{
+    background-color: #1f2bb4;
+    right: 0;
+}
+
+.ball{
+    position: absolute;
+    border-radius: 50%;
+}
